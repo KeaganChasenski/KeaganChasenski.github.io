@@ -1,27 +1,40 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Header from '../components/Header';
+import './Portfolio.css';
 
-import Main from '../layouts/Main';
+const Portfolio = () => {
+  const images = [
+    {
+      id: 1,
+      src: '/path/to/image1.jpg',
+      alt: 'Project 1',
+      title: 'Project Title 1',
+      description: 'Project description 1',
+    },
+    // Add more images here
+  ];
 
-import Cell from '../components/Projects/Cell';
-import data from '../data/portfolio';
-
-const Projects = () => (
-  <Main title="Projects" description="Learn about Michael D'Angelo's projects.">
-    <article className="post" id="projects">
-      <header>
-        <div className="title">
-          <h2>
-            <Link to="/projects">Projects</Link>
-          </h2>
-          <p>A selection of projects that I&apos;m not too ashamed of</p>
+  return (
+    <div className="page-container">
+      <Header />
+      <main className="main-content">
+        <div className="gallery-container">
+          <h1>My Portfolio</h1>
+          <div className="gallery">
+            {images.map((image) => (
+              <div key={image.id} className="gallery-item">
+                <img src={image.src} alt={image.alt} loading="lazy" />
+                <div className="overlay">
+                  <h3>{image.title}</h3>
+                  <p>{image.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-      </header>
-      {data.map((project) => (
-        <Cell data={project} key={project.title} />
-      ))}
-    </article>
-  </Main>
-);
+      </main>
+    </div>
+  );
+};
 
-export default Projects;
+export default Portfolio;

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Main from '../layouts/Main';
-import Cell from '../components/Projects/Cell'; // Import the Cell component
+import Cell from '../components/Portfolio/Cell'; // Import the Cell component
 
 const Index = () => (
   <Main

@@ -1,15 +1,21 @@
 const degrees = [
   {
-    school: 'Stanford University',
-    degree: 'M.S. Computational and Mathematical Engineering',
+    school: 'University of Cape Town',
+    degree: 'BSC Electrical and Computer Engineering (ECE)',
     link: 'https://stanford.edu',
+    year: 2021,
+  },
+  {
+    school: '7 distinctions for IEB Matric',
+    degree: 'Michaelhouse',
+    link: 'https://michaelhouse.org',
     year: 2016,
   },
   {
-    school: 'University at Buffalo',
-    degree: 'B.S. Electrical Engineering, Computer Engineering',
-    link: 'https://buffalo.edu',
-    year: 2012,
+    school: 'Qualified',
+    degree: 'FGASA NQF4 guide',
+    link: 'https://www.fgasa.co.za/',
+    year: 2022,
   },
 ];
 

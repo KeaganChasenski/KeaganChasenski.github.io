@@ -14,6 +14,23 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  text-align: center;
+}
+
+.gallery-container h1 {
+    margin-bottom: 1.5em;
+    font-size: 2em; /* Adjust as per your design */
+}
+
+.filter-button:hover {
+    background-color: #e0e0e0; /* Slightly darker on hover */
+    border-color: #bbb;
+}
+  
+.filter-button.active {
+    background-color: #e0e0e0; /* Active state - use your site's primary/accent color */
+    color: white; /* Text color for active state */
+    border-color: #bbb; /* Border color for active state */
 }
 
 .gallery {

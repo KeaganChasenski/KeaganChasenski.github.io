@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 
 import Course from './Courses/Course';
 
-const getRows = (courses) => courses
+// For sorting courses alphabetically
+/* const getRows = (courses) => courses
   .sort((a, b) => {
     let ret = 0;
     if (a.university > b.university) ret = -1;
@@ -11,7 +12,9 @@ const getRows = (courses) => courses
     else if (a.number > b.number) ret = 1;
     else if (a.number < b.number) ret = -1;
     return ret;
-  })
+  }) */
+
+const getRows = (courses) => courses
   .map((course, idx) => (
     <Course
       data={course}
@@ -25,6 +28,11 @@ const Courses = ({ data }) => (
     <div className="link-to" id="courses" />
     <div className="title">
       <h3>Selected Courses</h3>
+      <article className="resume-link">
+        <p>
+          <a href="https://uct.ac.za/sites/default/files/media/documents/uct-handbook-07a-2025-faculty-of-engineering-and-the-built-environment-ug.pdf">The UCT EBE Undergraduate handbook for course information</a>
+        </p>
+      </article>
     </div>
     <ul className="course-list">{getRows(data)}</ul>
   </div>
@@ -35,7 +43,6 @@ Courses.propTypes = {
     PropTypes.shape({
       title: PropTypes.string,
       number: PropTypes.string,
-      link: PropTypes.string,
       university: PropTypes.string,
     }),
   ),

@@ -23,6 +23,10 @@ const routes: Route[] = [
     path: '/projects',
   },
   {
+    label: 'Photography',
+    path: '/photography',
+  },
+  {
     label: 'Writing',
     path: '/writing',
   },

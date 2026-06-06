@@ -13,7 +13,7 @@ describe('sitemap', () => {
         expect.objectContaining({ url: `${SITE_URL}/resume/` }),
         expect.objectContaining({ url: `${SITE_URL}/projects/` }),
         expect.objectContaining({ url: `${SITE_URL}/writing/` }),
-        expect.objectContaining({ url: `${SITE_URL}/stats/` }),
+        expect.objectContaining({ url: `${SITE_URL}/photography/` }),
         expect.objectContaining({ url: `${SITE_URL}/contact/` }),
       ]),
     );

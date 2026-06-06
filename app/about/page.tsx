@@ -22,9 +22,12 @@ export default function AboutPage() {
         <header className="about-header">
           <h1 className="page-title">About</h1>
         </header>
-        <AboutContent markdown={aboutMarkdown} />
+        <AboutContent
+          markdown={aboutMarkdown}
+          appendLinks={[{ id: 'by-the-numbers', title: 'By the numbers' }]}
+        />
 
-        <section className="about-stats">
+        <section className="about-stats" id="by-the-numbers">
           <h2 className="about-stats-title">By the numbers</h2>
           <div className="about-stats-grid">
             <div className="about-stats-section">

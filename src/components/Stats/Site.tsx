@@ -19,11 +19,11 @@ interface GitHubData {
 // Static fallback values used when GitHub API is unavailable
 // Updated: 2026-01-04 with current values
 const FALLBACK_DATA: GitHubData = {
-  stargazers_count: 1610,
-  subscribers_count: 23,
-  forks: 948,
-  open_issues_count: 1,
-  pushed_at: '2026-01-04T00:00:00Z',
+  stargazers_count: 1,
+  subscribers_count: 2,
+  forks: 3,
+  open_issues_count: 4,
+  pushed_at: '1998-02-25T00:00:00Z',
 };
 
 /**

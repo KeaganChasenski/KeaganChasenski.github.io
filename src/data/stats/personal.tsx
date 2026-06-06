@@ -11,7 +11,7 @@ const BIRTH_DATE = '1998-02-25T09:24:00';
 const MS_PER_YEAR = 1000 * 60 * 60 * 24 * 365.2421897;
 
 /** Update interval for age display in ms */
-const AGE_UPDATE_INTERVAL = 50;
+const AGE_UPDATE_INTERVAL = 25;
 
 /** Number of decimal places for age display */
 const AGE_PRECISION = 8;

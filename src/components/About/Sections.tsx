@@ -3,8 +3,14 @@
 import Markdown from 'markdown-to-jsx';
 import { createUniqueHeadingIds } from '@/lib/anchors';
 
+interface NavLink {
+  id: string;
+  title: string;
+}
+
 interface AboutContentProps {
   markdown: string;
+  appendLinks?: NavLink[];
 }
 
 interface AboutSection {
@@ -83,7 +89,7 @@ function getSectionClassName(title: string) {
   return variant ? `about-section ${variant}` : 'about-section';
 }
 
-export default function AboutContent({ markdown }: AboutContentProps) {
+export default function AboutContent({ markdown, appendLinks = [] }: AboutContentProps) {
   const { intro, sections } = splitAboutMarkdown(markdown);
 
   return (
@@ -93,7 +99,7 @@ export default function AboutContent({ markdown }: AboutContentProps) {
           <Markdown>{intro}</Markdown>
         </div>
       ) : null}
-      {sections.length > 0 ? (
+      {sections.length > 0 || appendLinks.length > 0 ? (
         <nav className="about-section-nav" aria-label="About sections">
           {sections.map((section) => (
             <a
@@ -102,6 +108,15 @@ export default function AboutContent({ markdown }: AboutContentProps) {
               className="about-section-nav-link"
             >
               {section.title}
+            </a>
+          ))}
+          {appendLinks.map((link) => (
+            <a
+              key={link.id}
+              href={`#${link.id}`}
+              className="about-section-nav-link"
+            >
+              {link.title}
             </a>
           ))}
         </nav>

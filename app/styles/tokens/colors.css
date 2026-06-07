@@ -1,0 +1,70 @@
+/* ========================================
+   COLOR TOKENS
+   Core color palette and semantic colors
+   ======================================== */
+
+@theme {
+  /* ===================
+     CORE PALETTE
+     =================== */
+  --color-bg: #f7f5f0;
+  --color-bg-alt: #f0ede5;
+  --color-bg-offset: #e8e4db;
+  --color-fg: #1a1a18;
+  --color-fg-bold: #1a1a18;
+  --color-fg-light: #5a5854;
+
+  /* ===================
+     ACCENT COLORS
+     =================== */
+  --color-accent: #8b6f47;
+  --color-accent-secondary: #3d5a47;
+  --color-accent-hover: #7a5e38;
+  --color-accent-light: color-mix(in srgb, var(--color-accent) 12%, transparent);
+  --color-accent-subtle: color-mix(in srgb, var(--color-accent) 5%, transparent);
+  --color-accent-muted: color-mix(in srgb, var(--color-accent) 3%, transparent);
+  --color-accent-underline: color-mix(in srgb, var(--color-accent) 30%, transparent);
+  --color-accent-underline-strong: color-mix(
+    in srgb,
+    var(--color-accent) 40%,
+    transparent
+  );
+  --color-accent-glow: color-mix(in srgb, var(--color-accent) 15%, transparent);
+  --color-accent-border: color-mix(in srgb, var(--color-accent) 50%, transparent);
+
+  /* ===================
+     SKILL CATEGORY COLORS
+     =================== */
+  --color-skill-1: #8b6f47;
+  --color-skill-2: #3d5a47;
+  --color-skill-3: #6b8c6b;
+  --color-skill-4: #b08a5e;
+  --color-skill-5: #a8a49d;
+  --color-skill-6: #5a5854;
+
+  /* ===================
+     BORDER COLORS
+     =================== */
+  --color-border: rgba(26, 26, 24, 0.1);
+  --color-border-bg: rgba(26, 26, 24, 0.06);
+  --color-border-alt: rgba(26, 26, 24, 0.15);
+
+  /* ===================
+     SURFACE TOKENS
+     =================== */
+  --color-surface-subtle: rgba(26, 26, 24, 0.03);
+  --color-surface-hover: rgba(26, 26, 24, 0.06);
+  --color-surface-active: rgba(26, 26, 24, 0.1);
+  --color-text-muted: #a8a49d;
+  --color-text-dim: rgba(26, 26, 24, 0.6);
+  --color-fg-muted: #a8a49d;
+
+  /* ===================
+     SEMANTIC COLORS
+     =================== */
+  --color-white: #fff;
+  --color-black: #000;
+  --color-overlay-light: rgba(255, 255, 255, 0.15);
+  --color-overlay-dark: rgba(26, 26, 24, 0.15);
+  --color-overlay-darker: rgba(26, 26, 24, 0.3);
+}

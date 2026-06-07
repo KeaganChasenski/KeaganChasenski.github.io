@@ -6,10 +6,7 @@ Guidance for AI coding agents working on this Next.js personal portfolio site.
 
 ```bash
 npm run dev          # Start dev server (localhost:3000)
-npm run format       # Format with Prettier + Biome (run before committing)
-npm run lint         # Biome linting
 npm run type-check   # TypeScript checking
-npm test             # Vitest tests
 npm run build        # Production build + static export
 ```
 
@@ -17,8 +14,6 @@ npm run build        # Production build + static export
 
 ```bash
 npx tsc --noEmit path/to/file.tsx           # Type check single file
-npx biome check path/to/file.tsx            # Lint single file
-npm test -- ComponentName                    # Test single component
 ```
 
 ## Project Structure
@@ -45,7 +40,6 @@ docs/                 → Documentation
 - Use existing patterns from similar components
 - Mark client components with `'use client'`
 - Follow conventional commits: `feat:`, `fix:`, `chore:`, `docs:`
-- Run `npm run format` before committing (CI enforces this)
 
 **Don't:**
 
@@ -53,24 +47,23 @@ docs/                 → Documentation
 - Create god components or monolithic files
 - Hard-code colors—use CSS variables (`var(--color-*)`)
 - Skip type annotations on function parameters
-- Commit without running `npm run format` first
 
 ## Git Workflow
 
 - Create a topic branch for every task; never commit or push directly to `main`
 - Make small, frequent conventional commits as you go (e.g., `feat:`, `fix:`, `refactor:`)
 - Push to your remote branch after every commit to keep it in sync
-- Land changes on `main` by merging GitHub PRs with conventional-commit titles (deploys trigger automatically from these merges)
+- Land changes on `main` by merging GitHub PRs with conventional-commit titles
 - If multiple PRs need to land together, open an integration branch PR; do not locally merge into `main`
 - Treat `main` as protected: force-pushes and history rewrites require explicit user approval
 
 ## Tech Stack
 
-Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS v4 · Biome · Vitest
+Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS v4
 
 ## Key Patterns
 
-- **Theming**: `data-theme` attribute on `<html>`, persisted to `window.localStorage` in client code/tests to avoid Node runtime globals leaking into browser-only paths
+- **Theming**: `data-theme` attribute on `<html>`, persisted to `window.localStorage` in client code
 - **Static export**: `output: 'export'` for GitHub Pages—no server features
 - **Canonical/export URLs**: When generating absolute URLs for metadata, RSS, sitemap, or schema, match `trailingSlash: true` output (`/about/`, `/writing/post-slug/`) instead of non-canonical no-slash variants; file-like routes such as `/feed.xml` and `/sitemap.xml` stay file-like
 - **Page metadata**: Route-level `metadata` exports and `generateMetadata` should override `openGraph` and `twitter`, not just `title`/`description`, otherwise subpages inherit the homepage share card from `app/layout.tsx`; for `app/not-found.tsx`, omit `openGraph.url` because there is no stable canonical 404 route in the static export
@@ -80,22 +73,11 @@ Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS v4 · Biome ·
 - **Blog posts**: Markdown files in `content/writing/` with frontmatter (title, date, description); slug derived from filename
 - **Writing page**: Add external links in `src/data/writing.ts` and keep dated entries sorted newest first; local posts still live in `content/writing/`
 
-## Testing
-
-Tests live in `__tests__/` directories adjacent to the code they test. Run `npm test` before committing.
-
-```bash
-npm test                        # Run all tests
-npm test -- --watch             # Watch mode
-npm test -- ComponentName       # Run specific test
-```
-
 ## Further Reading
 
 - [README.md](./README.md) — Setup and deployment
 - [docs/adapting-guide.md](./docs/adapting-guide.md) — Guide for forking and customizing
 - [docs/design-goals.md](./docs/design-goals.md) — Architecture principles
-- [docs/contributing.md](./docs/contributing.md) — Contribution guidelines
 
 ## Maintaining This Document
 
